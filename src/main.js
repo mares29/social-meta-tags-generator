@@ -1,11 +1,18 @@
 import Vue from 'vue'
 import App from './App'
-import * as hljs from 'highlight.js'
 
-Vue.directive('highlightjs', function () {
-  hljs.highlightBlock(this.el)
+Vue.directive('error', {
+  bind: function () {
+    console.log('bound')
+  },
+  update: function (value) {
+    if (!value.length) {
+      this.el.classList.add('error')
+    } else {
+      this.el.classList.remove('error')
+    }
+  }
 })
-
 /* eslint-disable no-new */
 new Vue({
   el: 'body',

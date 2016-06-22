@@ -21,12 +21,17 @@
       <ul>
         <li v-if="site.essential"><a
           href="https://developers.facebook.com/tools/debug/og/object?q={{site.essential.url}}"
-          target="_blank">facebook</a></li>
-        <li v-if="!site.essential"><a href="https://developers.facebook.com/tools/debug/og/object?q=" target="_blank">facebook</a>
+          target="_blank">facebook</a> (<a href="https://developers.facebook.com/docs/sharing/webmasters#markup" target="_blank">doc</a>)</li>
+        <li v-if="!site.essential"><a href="https://developers.facebook.com/tools/debug/og/object?q=" target="_blank">facebook (<a href="https://developers.facebook.com/docs/sharing/webmasters#markup" target="_blank">doc</a>)</a>
         </li>
-        <li><a href="https://cards-dev.twitter.com/validator" target="_blank">twitter</a>
+        <li><a href="https://cards-dev.twitter.com/validator" target="_blank">twitter</a> (<a href="https://dev.twitter.com/cards/overview">doc</a>)
         </li>
       </ul>
+
+      <hr>
+
+      <p>This app is inspired by article <a href="https://css-tricks.com/essential-meta-tags-social-media/"
+                                            target="_blank">The essential meta tags for social media</a>.</p>
 
     </aside>
 
@@ -40,8 +45,7 @@
       </section>
 
       <footer>
-        <p>This app is inspired by article <a href="https://css-tricks.com/essential-meta-tags-social-media/"
-                                              target="_blank">The essential meta tags for social media</a>.</p>
+        <p>Made with <a href="http://vuejs.org/" target="_blank">vue.js</a> by <a href="https://twitter.com/karelmares" target="_blank">@karelmares</a></p>
       </footer>
     </main>
   </div>
@@ -90,7 +94,7 @@
     font-family: 'Source Code Pro', monospace;
   }
 
-  a, a:visited {
+  a {
     color: #A82560;
     cursor: pointer;
     i {
@@ -134,7 +138,8 @@
           color: #fff;
           text-decoration: underline;
           &:hover {
-            color: #A82560;
+            color: #fff;
+            text-underline: none;
           }
         }
       }
@@ -164,6 +169,7 @@
       list-style: none;
 
       li {
+        color: rgba(255,255,255,.5);
         &:before {
           content: "-";
           color: #fff;
